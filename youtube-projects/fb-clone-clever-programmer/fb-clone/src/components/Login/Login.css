@@ -1,0 +1,53 @@
+.login {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.login > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.login > div > img {
+    object-fit: contain;
+    height: 150px;
+}
+
+.MuiButtonBase-root,
+.MuiButton-root,
+.MuiButton-text,
+.MuiButton-label,
+.login > button {
+    width: 300px;
+    background-color: #2e81f4;
+    color: #eff2f5;
+    font-weight: 800;
+}
+
+.MuiButtonBase-root:hover,
+.MuiButton-root:hover,
+.MuiButton-text:hover,
+.MuiButton-label:hover,
+.login > button:hover {
+    background-color: white;
+    color: #2e81f4;
+}
+
+/*.MuiButtonBase-root,*/
+/*.MuiButton-root,*/
+/*.MuiButton-text,*/
+/*.MuiButton-label {*/
+    /*width: 300px;*/
+    /*background-color: #2e81f4;*/
+    /*color: #eff2f5;*/
+    /*font-weight: 800;*/
+/*}*/
+
+/*.MuiButtonBase-root,*/
+/*.MuiButton-root,*/
+/*.MuiButton-text,*/
+/*.MuiButton-label:hover {*/
+    /*background-color: white;*/
+    /*color: #2e81f4;*/
+/*}*/

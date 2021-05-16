@@ -6,7 +6,7 @@ const router = require('express').Router();
 let Exercise = require('../models/exercise.model');
 
 /**
- * @Description: Get al exercise entities
+ * @Description: Get all exercise entities
  * @Endpoint: GET /
  * */
 router.route('/').get((req, res) => {

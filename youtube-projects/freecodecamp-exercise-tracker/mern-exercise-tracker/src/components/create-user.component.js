@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 class CreateUser extends Component {
   constructor(props) {
@@ -29,7 +30,10 @@ class CreateUser extends Component {
     console.log(newUser);
 
     axios.post(`http://localhost:5000/users/add`, newUser)
-      .then(res => console.log(res.data));
+      .then(res => {
+        console.log(res.data);
+        alert(`User created with name: ${newUser.username}`);
+      });
 
     this.setState({
       username: ''
@@ -39,6 +43,7 @@ class CreateUser extends Component {
   render() {
     return (
       <div>
+        <Link to='/'>Back to List</Link>
         <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

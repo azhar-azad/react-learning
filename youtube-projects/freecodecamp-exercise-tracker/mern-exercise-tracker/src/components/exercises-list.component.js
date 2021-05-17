@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import '../App.css';
+
 const Exercise = props => (
   <tr>
     <td>{props.exercise.username}</td>
@@ -9,12 +11,15 @@ const Exercise = props => (
     <td>{props.exercise.duration}</td>
     <td>{props.exercise.date.substring(0, 10)}</td>
     <td>
-      <Link to={`/edit/${props.exercise._id}`}>edit</Link>
-      |
-      <a href="#"
-         onClick={() => { props.deleteExercise(props.exercise._id) }}>
-        delete
-      </a>
+      <span className="action-link">
+        <Link to={`/edit/${props.exercise._id}`}>Edit</Link>
+      </span>
+      <span className="action-link">
+        <a href="#"
+           onClick={() => { props.deleteExercise(props.exercise._id) }}>
+          Delete
+        </a>
+      </span>
     </td>
   </tr>
 );
@@ -63,7 +68,17 @@ class ExercisesList extends Component {
   render() {
     return (
       <div>
-        <h3>Logged Exercises</h3>
+        <div className="header-main">
+          <h3>Logged Exercises</h3>
+          <div>
+            <span className="header-link">
+              <Link to='/create'>Create New Log</Link>
+            </span>
+            <span className="header-link">
+              <Link to='/user'>Create New User</Link>
+            </span>
+          </div>
+        </div>
         <table className="table">
           <thead className="thead-light">
             <tr>

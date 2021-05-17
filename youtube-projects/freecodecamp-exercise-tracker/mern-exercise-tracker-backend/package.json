@@ -4,7 +4,7 @@
   "description": "Backend for Mern-Exercise-Tracker react app",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node_modules/.bin/nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Azad",

@@ -3,12 +3,14 @@
 
 # node_modules
 udemy-react-complete-guide/projects/react-complete-guide/node_modules/
+
 youtube-projects/jsmastery-chat-app/server/node_modules/
 youtube-projects/fb-clone-clever-programmer/fb-clone/node_modules/
 youtube-projects/freecodecamp-exercise-tracker/mern-exercise-tracker/node_modules
 youtube-projects/freecodecamp-exercise-tracker/mern-exercise-tracker-backend/node_modules/
-youtube-projects/mern-library-mgmt-app/library-mgmt-app/node_modules/
-youtube-projects/mern-library-mgmt-app/library-mgmt-app-backend/node_modules/
+
+practice/mern-library-mgmt-app/library-mgmt-app/node_modules/
+practice/mern-library-mgmt-app/library-mgmt-app-backend/node_modules/
 
 # env file
 

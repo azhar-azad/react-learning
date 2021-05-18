@@ -20,6 +20,9 @@ class Navbar extends Component {
             <li className="navbar-item">
               <Link className="nav-link" to="/publishers/create">Create New Publisher</Link>
             </li>
+            <li className="navbar-item">
+              <Link className="nav-link" to="/admin/login">Admin</Link>
+            </li>
           </ul>
         </div>
       </nav>

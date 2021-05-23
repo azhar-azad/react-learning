@@ -105,7 +105,7 @@ class CreateBook extends Component {
 
     console.log(JSON.stringify(book));
 
-    axios.post(`http://localhost:5000/books/add`, book)
+    axios.post(`http://localhost:5000/books`, book)
       .then(res => console.log(res.data));
 
     window.location = '/';

@@ -57,7 +57,7 @@ class CreateAuthor extends Component {
 
     console.log(JSON.stringify(newAuthor));
 
-    axios.post(`http://localhost:5000/authors/add`, newAuthor)
+    axios.post(`http://localhost:5000/authors`, newAuthor)
       .then(res => {
         console.log(JSON.stringify(res.data));
         alert(`Author created with name: ${newAuthor.firstName} ${newAuthor.lastName}`);

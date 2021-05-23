@@ -39,7 +39,7 @@ class CreatePublisher extends Component {
 
     console.log(JSON.stringify(newPublisher));
 
-    axios.post(`http://localhost:5000/publishers/add`, newPublisher)
+    axios.post(`http://localhost:5000/publishers`, newPublisher)
       .then(res => {
         console.log(JSON.stringify(res.data));
         alert(`Publisher created with name: ${newPublisher.pubName}`);

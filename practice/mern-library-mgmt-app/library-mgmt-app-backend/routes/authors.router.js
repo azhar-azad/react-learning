@@ -22,7 +22,7 @@ router.get('/', getAuthors);
  * @Description: Create a Author entity
  * @Endpoint: POST /add
  * */
-router.post('/add', createAuthor);
+router.post('/', createAuthor);
 
 /**
  * @Description: Get a single Author entity by id

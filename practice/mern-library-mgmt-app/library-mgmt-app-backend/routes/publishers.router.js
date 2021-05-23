@@ -22,7 +22,7 @@ router.get('/', getPublishers);
  * @Description: Create a Publisher entity
  * @Endpoint: POST /add
  * */
-router.post('/add', createPublisher);
+router.post('/', createPublisher);
 
 /**
  * @Description: Get a single Publisher entity by id

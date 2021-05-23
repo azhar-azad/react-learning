@@ -22,7 +22,7 @@ router.get('/', getBooks);
  * @Description: Create a Book entity
  * @Endpoint: POST /add
  * */
-router.post('/add', createBook);
+router.post('/', createBook);
 
 /**
  * @Description: Get a single Book entity by id

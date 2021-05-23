@@ -43,13 +43,13 @@ router.delete('/:id',deleteUser);
  * @Description: Update a single User entity by id
  * @Endpoint: POST /update/id
  * */
-router.post('/update/:id',updateUser);
+router.put('/:id',updateUser);
 
 /**
  * @Description: Update a single User entity's type by id
  * @Endpoint: POST /update/id/type
  * */
-router.put('/update/:id/type',updateUserType);
+router.put('/:id/type',updateUserType);
 
 /**
  * @Description: Login an User entity by username and password

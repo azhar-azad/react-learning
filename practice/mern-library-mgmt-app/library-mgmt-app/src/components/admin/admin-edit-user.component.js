@@ -43,7 +43,7 @@ class AdminEditUser extends Component {
 
     console.log(JSON.stringify(user));
 
-    axios.put(`http://localhost:5000/users/update/${this.props.match.params.id}/type`, user)
+    axios.put(`http://localhost:5000/users/${this.props.match.params.id}/type`, user)
       .then(res => console.log(res.data));
 
     window.location = '/admin/home/';

@@ -41,19 +41,16 @@ const deleteUser = (req, res) => {
 };
 
 const updateUser = (req, res) => {
-  User.findById(req.params.id)
-    .then(user => {
-      user.firstName = req.body.firstName;
-      user.lastName = req.body.lastName;
-      user.email = req.body.email;
-      user.username = req.body.username;
-      user.password = req.body.password;
-      user.type = req.body.type;
+  let updatedUser = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password
+  };
 
-      user.save()
-        .then(() => res.json('User updated!'))
-        .catch(err => res.status(400).json(`Error: ${err}`));
-    })
+  User.findByIdAndUpdate(req.params.id, updatedUser, { new: true })
+    .then(user => res.json(user))
     .catch(err => res.status(400).json(`Error: ${err}`));
 };
 

@@ -35,16 +35,25 @@ const deletePublisher = (req, res) => {
 };
 
 const updatePublisher = (req, res) => {
-  Publisher.findById(req.params.id)
-    .then(publisher => {
-      publisher.pubName = req.body.pubName;
-      publisher.pubAddress = req.body.pubAddress;
+  let updatedPublisher = {
+    pubName: req.body.pubName,
+    pubAddress: req.body.pubAddress
+  };
 
-      publisher.save()
-        .then(() => res.json('Publisher updated!'))
-        .catch(err => res.status(400).json(`Error: ${err}`));
-    })
+  Publisher.findByIdAndUpdate(req.params.id, updatedPublisher, { new: true })
+    .then(publisher => res.json(publisher))
     .catch(err => res.status(400).json(`Error: ${err}`));
+
+  // Publisher.findById(req.params.id)
+  //   .then(publisher => {
+  //     publisher.pubName = req.body.pubName;
+  //     publisher.pubAddress = req.body.pubAddress;
+  //
+  //     publisher.save()
+  //       .then(() => res.json('Publisher updated!'))
+  //       .catch(err => res.status(400).json(`Error: ${err}`));
+  //   })
+  //   .catch(err => res.status(400).json(`Error: ${err}`));
 };
 
 module.exports = {

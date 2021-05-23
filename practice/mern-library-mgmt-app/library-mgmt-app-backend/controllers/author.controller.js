@@ -37,18 +37,29 @@ const deleteAuthor = (req, res) => {
 };
 
 const updateAuthor = (req, res) => {
-  Author.findById(req.params.id)
-    .then(author => {
-      author.firstName = req.body.firstName;
-      author.lastName = req.body.lastName;
-      author.authAddress = req.body.authAddress;
-      author.email = req.body.email;
+  let updatedAuthor = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    authAddress: req.body.authAddress,
+    email: req.body.email
+  };
 
-      author.save()
-        .then(() => res.json('Author updated!'))
-        .catch(err => res.status(400).json(`Error: ${err}`));
-    })
+  Author.findByIdAndUpdate(req.params.id, updatedAuthor, { new: true })
+    .then(author => res.json(author))
     .catch(err => res.status(400).json(`Error: ${err}`));
+
+  // Author.findById(req.params.id)
+  //   .then(author => {
+  //     author.firstName = req.body.firstName;
+  //     author.lastName = req.body.lastName;
+  //     author.authAddress = req.body.authAddress;
+  //     author.email = req.body.email;
+  //
+  //     author.save()
+  //       .then(() => res.json('Author updated!'))
+  //       .catch(err => res.status(400).json(`Error: ${err}`));
+  //   })
+  //   .catch(err => res.status(400).json(`Error: ${err}`));
 };
 
 module.exports = {

@@ -41,20 +41,33 @@ const deleteBook = (req, res) => {
 };
 
 const updateBook = (req, res) => {
-  Book.findById(req.params.id)
-    .then(book => {
-      book.bookName = req.body.bookName;
-      book.added = req.body.added;
-      book.pageCount = req.body.pageCount;
-      book.totalCopies = req.body.totalCopies;
-      book.authorName = req.body.authorName;
-      book.publisherName = req.body.publisherName;
+  let updatedBook = {
+    bookName: req.body.bookName,
+    added: req.body.added,
+    pageCount: req.body.pageCount,
+    totalCopies: req.body.totalCopies,
+    authorName: req.body.authorName,
+    publisherName: req.body.publisherName
+  };
 
-      book.save()
-        .then(() => res.json('Book updated!'))
-        .catch(err => res.status(400).json(`Error: ${err}`));
-    })
+  Book.findByIdAndUpdate(req.params.id, updatedBook, { new: true })
+    .then(book => res.json(book))
     .catch(err => res.status(400).json(`Error: ${err}`));
+
+  // Book.findById(req.params.id)
+  //   .then(book => {
+  //     book.bookName = req.body.bookName;
+  //     book.added = req.body.added;
+  //     book.pageCount = req.body.pageCount;
+  //     book.totalCopies = req.body.totalCopies;
+  //     book.authorName = req.body.authorName;
+  //     book.publisherName = req.body.publisherName;
+  //
+  //     book.save()
+  //       .then(() => res.json('Book updated!'))
+  //       .catch(err => res.status(400).json(`Error: ${err}`));
+  //   })
+  //   .catch(err => res.status(400).json(`Error: ${err}`));
 };
 
 module.exports = {

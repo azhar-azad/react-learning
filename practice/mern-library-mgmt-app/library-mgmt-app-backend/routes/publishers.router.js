@@ -40,6 +40,6 @@ router.delete('/:id',deletePublisher);
  * @Description: Update a single Publisher entity by id
  * @Endpoint: POST /update/id
  * */
-router.post('/update/:id',updatePublisher);
+router.put('/:id',updatePublisher);
 
 module.exports = router;

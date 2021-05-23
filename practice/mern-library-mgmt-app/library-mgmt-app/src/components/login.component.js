@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-class AdminLogin extends Component {
+import { authServices } from '../services/authentication.service';
+
+class Login extends Component {
 
   constructor(props) {
     super(props);
@@ -41,14 +44,9 @@ class AdminLogin extends Component {
     axios.post(`http://localhost:5000/users/login`, loginAttempt)
       .then(res => {
         console.log(JSON.stringify(res.data));
-        if (res.data.type === 'ADMIN') {
-          window.location = '/admin/home';
-        }
-        else {
-          window.location = '/admin/error';
-        }
+        authServices.login(res.data);
       }).catch(err => {
-        window.location = '/admin/error';
+        window.location = '/error';
     })
 
     this.setState({
@@ -62,7 +60,7 @@ class AdminLogin extends Component {
   render() {
     return (
       <div>
-        <h3>Login to Admin Panel</h3>
+        <h3>Login to Library Management</h3>
 
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
@@ -93,9 +91,12 @@ class AdminLogin extends Component {
             />
           </div>
         </form>
+        <div>
+          Not an user? Register <Link to="/users/create">here</Link>
+        </div>
       </div>
     );
   }
 }
 
-export default AdminLogin;
+export default Login;

@@ -57,6 +57,12 @@ const updateUser = (req, res) => {
     .catch(err => res.status(400).json(`Error: ${err}`));
 };
 
+const updateUserType = (req, res) => {
+  User.findByIdAndUpdate(req.params.id, { type: req.body.type }, { new: true })
+    .then((user) => res.json(user))
+    .catch(err => res.status(400).json(`Error: ${err}`));
+};
+
 const loginUser = (req, res) => {
   User.find({ username: req.body.username }).exec()
     .then(user => {
@@ -76,5 +82,6 @@ module.exports = {
   getUser,
   deleteUser,
   updateUser,
+  updateUserType,
   loginUser
 };

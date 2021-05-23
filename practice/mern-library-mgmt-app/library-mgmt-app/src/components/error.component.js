@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class AdminError extends Component {
+class Error extends Component {
   render() {
     return(
       <div>
-        AdminError Component
+        Error Component
       </div>
     );
   }
 }
 
-export default AdminError;
+export default Error;

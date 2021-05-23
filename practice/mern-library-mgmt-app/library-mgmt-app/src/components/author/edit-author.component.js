@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class EditUser extends Component {
+class EditAuthor extends Component {
   render() {
     return (
       <div>
-        EditUser Component
+        EditAuthor Component
       </div>
     );
   }
 }
 
-export default EditUser;
+export default EditAuthor;

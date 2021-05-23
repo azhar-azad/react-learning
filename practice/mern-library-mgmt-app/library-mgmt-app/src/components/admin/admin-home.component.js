@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import BooksList from "../book/books-list.component";
 
 const User = props => (
   <tr>
@@ -10,6 +11,9 @@ const User = props => (
     <td>{props.user.type}</td>
     <td>
       <span className="action-link">
+        {
+
+        }
         <Link to={`/admin/users/edit/${props.user._id}`}>Edit</Link>
       </span>
       <span className="action-link">
@@ -65,24 +69,30 @@ class AdminHome extends Component {
   render() {
     return(
       <div>
-        <del>AdminHome Component</del>
+        <div>
+          <h3>All Users</h3>
 
-        <h3>All Users</h3>
+          <table className="table">
+            <thead className="thead-light">
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Type</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            { this.showUserList() }
+            </tbody>
+          </table>
+        </div>
 
-        <table className="table">
-          <thead className="thead-light">
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Type</th>
-            <th>Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-          { this.showUserList() }
-          </tbody>
-        </table>
+        <br/>
+
+        <div>
+          <BooksList/>
+        </div>
       </div>
     );
   }

@@ -12,7 +12,7 @@ const Book = props => (
     <td>{props.book.added.substring(0, 10)}</td>
     <td>
       <span className="action-link">
-        <Link to={`/edit/${props.book._id}`}>Edit</Link>
+        <Link to={`/books/edit/${props.book._id}`}>Edit</Link>
       </span>
       <span className="action-link">
         <a href="#"

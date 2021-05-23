@@ -10,6 +10,7 @@ const {
   getUser,
   deleteUser,
   updateUser,
+  updateUserType,
   loginUser
 } = require('../controllers/user.controller');
 
@@ -42,6 +43,12 @@ router.delete('/:id',deleteUser);
  * @Endpoint: POST /update/id
  * */
 router.post('/update/:id',updateUser);
+
+/**
+ * @Description: Update a single User entity's type by id
+ * @Endpoint: POST /update/id/type
+ * */
+router.put('/update/:id/type',updateUserType);
 
 /**
  * @Description: Login an User entity by username and password

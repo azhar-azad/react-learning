@@ -15,7 +15,11 @@ const User = props => (
         {
 
         }
-        <Link to={`/admin/users/edit/${props.user._id}`}>Edit</Link>
+        <Link to={`/admin/users/edit/${props.user._id}`}>
+          {
+            props.user.type === 'ADMIN' ? 'Make USER' : 'Make ADMIN'
+          }
+        </Link>
       </span>
       <span className="action-link">
         <a href="#"

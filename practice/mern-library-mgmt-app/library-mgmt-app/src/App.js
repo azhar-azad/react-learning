@@ -16,7 +16,7 @@ import AuthorsList from "./components/author/authors-list.component";
 import CreateAuthor from "./components/author/create-author.component";
 import EditAuthor from "./components/author/edit-author.component";
 import RegisterUser from "./components/user/register-user.component";
-import UserProfile from "./components/user/user-profile.component";
+import EditUser from "./components/user/edit-user.component";
 import AdminHome from "./components/admin/admin-home.component";
 import AdminEditUser from "./components/admin/admin-edit-user.component";
 
@@ -88,7 +88,7 @@ class App extends Component {
                 <Route path="/publishers/create" exact component={CreatePublisher} />
                 <Route path="/publishers/edit/:id" exact component={EditPublisher} />
 
-                {/*<Route path="/users/profile/:id" exact component={UserProfile} />*/}
+                <Route path="/users/edit/:id" exact component={EditUser} />
                 {
                   this.state.isAdmin ? (
                     // for admins

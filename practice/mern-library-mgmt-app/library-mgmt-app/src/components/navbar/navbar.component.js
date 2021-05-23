@@ -9,7 +9,8 @@ class Navbar extends Component {
 
     this.state = {
       isLoggedIn: false,
-      isAdmin: false
+      isAdmin: false,
+      currentUsername: ''
     }
   }
 
@@ -35,6 +36,10 @@ class Navbar extends Component {
         isAdmin: false
       });
     }
+
+    this.setState({
+      currentUsername: authServices.getUsername()
+    });
   }
 
   render() {
@@ -46,6 +51,7 @@ class Navbar extends Component {
             <li className="navbar-item">
               <SmartLink className="nav-link" to="/books" body="All Books" show={this.state.isLoggedIn} />
             </li>
+
             <li className="navbar-item">
               <SmartLink className="nav-link" to="/books/create" body="Create New Book" show={this.state.isLoggedIn}/>
             </li>
@@ -55,6 +61,10 @@ class Navbar extends Component {
             <li className="navbar-item">
               <SmartLink className="nav-link" to="/publishers/create" body="Create New Publisher" show={this.state.isLoggedIn}/>
             </li>
+
+            {/*<li className="navbar-item">*/}
+            {/*  <SmartLink className="nav-link" to={`/users/profile/${this.state.currentUsername}`} body="Profile" show={this.state.isLoggedIn} />*/}
+            {/*</li>*/}
 
             <li className="navbar-item">
               <SmartLink className="nav-link" to="/login" body="Login" show={!this.state.isLoggedIn} />

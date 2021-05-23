@@ -11,7 +11,8 @@ const {
   deleteUser,
   updateUser,
   updateUserType,
-  loginUser
+  loginUser,
+  getUserByUsername
 } = require('../controllers/user.controller');
 
 /**
@@ -54,6 +55,12 @@ router.put('/update/:id/type',updateUserType);
  * @Description: Login an User entity by username and password
  * @Endpoint: POST /login
  * */
-router.post('/login', loginUser)
+router.post('/login', loginUser);
+
+/**
+ * @Description: Get an User entity by username
+ * @Endpoint: GET /username
+ * */
+router.get('/profile/:id', getUserByUsername);
 
 module.exports = router;

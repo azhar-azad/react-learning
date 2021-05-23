@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import BooksList from "../book/books-list.component";
+import AuthorsList from "../author/authors-list.component";
 
 const User = props => (
   <tr>
@@ -91,7 +92,11 @@ class AdminHome extends Component {
         <br/>
 
         <div>
-          <BooksList/>
+          <Link to="/books">Book Management</Link>
+          <br/>
+          <Link to="/authors">Author Management</Link>
+          <br/>
+          <Link to="/publishers">Publisher Management</Link>
         </div>
       </div>
     );

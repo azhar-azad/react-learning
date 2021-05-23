@@ -16,6 +16,7 @@ import AuthorsList from "./components/author/authors-list.component";
 import CreateAuthor from "./components/author/create-author.component";
 import EditAuthor from "./components/author/edit-author.component";
 import RegisterUser from "./components/user/register-user.component";
+import UserProfile from "./components/user/user-profile.component";
 import AdminHome from "./components/admin/admin-home.component";
 import AdminEditUser from "./components/admin/admin-edit-user.component";
 
@@ -67,13 +68,13 @@ class App extends Component {
           {/* all users can access those two routes */}
           <Route path="/login" exact component={Login} />
           <Route path="/users/create" exact component={RegisterUser} />
+          <Route path="/error" component={Error} />
           {
             this.state.isLoggedIn ? (
               // for logged in users
               <div>
                 <Route path="/" exact component={BooksList} />
                 <Route path="/logout" exact component={Logout} />
-                <Route path="/error" component={Error} />
 
                 <Route path="/books" exact component={BooksList} />
                 <Route path="/books/create" exact component={CreateBook} />
@@ -87,6 +88,7 @@ class App extends Component {
                 <Route path="/publishers/create" exact component={CreatePublisher} />
                 <Route path="/publishers/edit/:id" exact component={EditPublisher} />
 
+                {/*<Route path="/users/profile/:id" exact component={UserProfile} />*/}
                 {
                   this.state.isAdmin ? (
                     // for admins

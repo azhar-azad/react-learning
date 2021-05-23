@@ -76,6 +76,12 @@ const loginUser = (req, res) => {
     .catch(err => res.status(500).json(`Error: ${err}`));
 };
 
+const getUserByUsername = (req, res) => {
+  User.find({ username: req.params.id }).exec()
+    .then(user => res.json(user))
+    .catch(err => res.status(400).json(`Error: ${err}`));
+};
+
 module.exports = {
   createUser,
   getUsers,
@@ -83,5 +89,6 @@ module.exports = {
   deleteUser,
   updateUser,
   updateUserType,
-  loginUser
+  loginUser,
+  getUserByUsername
 };

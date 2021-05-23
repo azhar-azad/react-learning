@@ -24,7 +24,11 @@ const isLoggedIn = () => {
 const isAdmin = () => {
   let userType = sessionStorage.getItem('userType');
   return userType === 'ADMIN';
-}
+};
+
+const getUsername = () => {
+  return sessionStorage.getItem('authenticatedUser');
+};
 
 const logout = () => {
   sessionStorage.removeItem('authenticatedUser');
@@ -35,6 +39,7 @@ const authServices = {
   login,
   isLoggedIn,
   isAdmin,
+  getUsername,
   logout
 }
 

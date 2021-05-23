@@ -42,7 +42,6 @@ class BooksList extends Component {
         this.setState({
           books: response.data
         });
-        console.log(response.data);
       })
       .catch(error => console.log(error));
   }

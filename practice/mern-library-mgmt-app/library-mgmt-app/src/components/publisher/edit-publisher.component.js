@@ -50,7 +50,7 @@ class EditPublisher extends Component {
 
     console.log(JSON.stringify(publisher));
 
-    axios.post(`http://localhost:5000/publishers/update/${this.props.match.params.id}`, publisher)
+    axios.put(`http://localhost:5000/publishers/${this.props.match.params.id}`, publisher)
       .then(res => console.log(res.data));
 
     window.location = '/publishers';

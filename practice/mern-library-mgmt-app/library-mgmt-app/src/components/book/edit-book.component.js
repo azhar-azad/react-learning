@@ -112,7 +112,7 @@ class EditBook extends Component {
 
     console.log(JSON.stringify(book));
 
-    axios.post(`http://localhost:5000/books/update/${this.props.match.params.id}`, book)
+    axios.put(`http://localhost:5000/books/${this.props.match.params.id}`, book)
       .then(res => console.log(res.data));
 
     window.location = '/';

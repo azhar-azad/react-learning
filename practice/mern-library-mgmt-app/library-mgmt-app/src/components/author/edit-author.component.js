@@ -70,7 +70,7 @@ class EditAuthor extends Component {
 
     console.log(JSON.stringify(author));
 
-    axios.post(`http://localhost:5000/authors/update/${this.props.match.params.id}`, author)
+    axios.put(`http://localhost:5000/authors/${this.props.match.params.id}`, author)
       .then(res => console.log(res.data));
 
     window.location = '/authors';
